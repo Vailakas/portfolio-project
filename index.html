@@ -9,23 +9,59 @@
 <body>
     <div class="container">
         <div class="painting-container">
-            <img src="./images/front.jpg" alt="Interactive Home Painting" class="main-painting">
-            <div class="click-areas">
+            <img src="./images/front.jpg" alt="Interactive Home Painting" class="main-painting" usemap="#painting-map">
+            
+            <map name="painting-map">
                 <!-- Page Navigation -->
-                <a href="contact.html" class="click-area contact" title="Contact"></a>
-                <a href="gallery.html" class="click-area gallery" title="Gallery"></a>
+                <area 
+                    shape="circle" 
+                    coords="235,490,25" 
+                    href="contact.html" 
+                    alt="Contact Page"
+                    title="Contact">
+                    
+                <area 
+                    shape="circle" 
+                    coords="670,330,25" 
+                    href="gallery.html" 
+                    alt="Gallery Page"
+                    title="Gallery">
                 
-                <!-- Social Media -->
-                <a href="https://www.facebook.com" class="click-area facebook" title="Facebook"></a>
-                <a href="https://www.instagram.com" class="click-area instagram" title="Instagram"></a>
-                <a href="https://www.twitter.com" class="click-area twitter" title="Twitter"></a>
-                <a href="https://www.tumblr.com" class="click-area tumblr" title="Tumblr"></a>
-            </div>
+                <!-- Social Media Links -->
+                <area 
+                    shape="circle" 
+                    coords="720,180,25" 
+                    href="https://www.facebook.com" 
+                    alt="Facebook"
+                    title="Facebook">
+                    
+                <area 
+                    shape="circle" 
+                    coords="690,230,25" 
+                    href="https://www.instagram.com" 
+                    alt="Instagram"
+                    title="Instagram">
+                    
+                <area 
+                    shape="circle" 
+                    coords="630,220,25" 
+                    href="https://www.twitter.com" 
+                    alt="Twitter"
+                    title="Twitter">
+                    
+                <area 
+                    shape="circle" 
+                    coords="720,420,25" 
+                    href="https://www.tumblr.com" 
+                    alt="Tumblr"
+                    title="Tumblr">
+            </map>
         </div>
         
         <footer class="copyright">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html> 

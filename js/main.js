@@ -1,17 +1,41 @@
-function updateScale() {
-    const container = document.querySelector('.painting-container');
-    const navAreas = document.querySelector('.nav-areas');
+document.addEventListener('DOMContentLoaded', function() {
+    const map = document.querySelector('map[name="painting-map"]');
+    const img = document.querySelector('img[usemap="#painting-map"]');
     
-    // Get the actual width of the container
-    const containerWidth = container.offsetWidth;
-    
-    // Calculate scale ratio (based on our 800px reference)
-    const scale = containerWidth / 800;
-    
-    // Apply the scale transform
-    navAreas.style.transform = `scale(${scale})`;
-}
+    // Log dimensions to help debug
+    console.log('Natural dimensions:', img.naturalWidth, img.naturalHeight);
+    console.log('Display dimensions:', img.offsetWidth, img.offsetHeight);
 
-// Run on load and resize
-window.addEventListener('load', updateScale);
-window.addEventListener('resize', updateScale);
+    // Wait for image to load before creating overlay
+    img.onload = function() {
+        // Create overlay for visualization
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.pointerEvents = 'none';
+        img.parentElement.appendChild(overlay);
+        
+        // Draw circles for each area
+        map.querySelectorAll('area').forEach(area => {
+            if (area.shape === 'circle') {
+                const [x, y, r] = area.coords.split(',').map(Number);
+                const circle = document.createElement('div');
+                
+                circle.style.position = 'absolute';
+                circle.style.left = (x / img.naturalWidth * 100) + '%';
+                circle.style.top = (y / img.naturalHeight * 100) + '%';
+                circle.style.width = (r * 2 / img.naturalWidth * 100) + '%';
+                circle.style.height = (r * 2 / img.naturalHeight * 100) + '%';
+                circle.style.border = `2px dashed ${area.href.includes('contact') || area.href.includes('gallery') ? 'blue' : 'green'}`;
+                circle.style.borderRadius = '50%';
+                circle.style.transform = 'translate(-50%, -50%)';
+                circle.style.pointerEvents = 'none';
+                
+                overlay.appendChild(circle);
+            }
+        });
+    };
+});

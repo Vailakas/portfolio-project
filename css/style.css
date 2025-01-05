@@ -21,73 +21,12 @@ html, body {
     justify-content: center;
     margin: 0;
     width: 100%;
-    max-width: 100%;
 }
 
 .main-painting {
     width: 100%;
     height: auto;
-    object-fit: cover;
-}
-
-/* Interactive Areas */
-.click-areas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.click-area {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border: 2px dashed transparent;
-    cursor: pointer;
-}
-
-/* Page Navigation */
-.click-area.contact {
-    border-color: blue;
-    left: 30%;
-    top: 47%;
-}
-
-.click-area.gallery {
-    border-color: blue;
-    right: 11%;
-    top: 32%;
-}
-
-/* Social Media Links */
-.click-area.facebook {
-    border-color: green;
-    right: 5%;
-    top: 17%;
-}
-
-.click-area.instagram {
-    border-color: green;
-    right: 8%;
-    top: 22%;
-}
-
-.click-area.twitter {
-    border-color: green;
-    right: 15%;
-    top: 21%;
-}
-
-.click-area.tumblr {
-    border-color: green;
-    right: 5%;
-    top: 41%;
-}
-
-/* Hover effect */
-.click-area:hover {
-    background: rgba(255, 255, 255, 0.2);
+    display: block;
 }
 
 /* Footer */
