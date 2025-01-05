@@ -10,115 +10,69 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0 20px 20px 20px;
-    box-sizing: border-box;
+    padding: 0;
 }
 
 .painting-container {
+    flex: 1;
     position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 1/1;
+    max-width: 100%;
 }
 
 .main-painting {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    object-fit: cover;
 }
 
-/* Interactive Areas Base Styles */
-.nav-areas {
+/* SVG Interactive Areas */
+.click-areas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 800px;
-    height: 800px;
-    transform-origin: top left;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
-.nav-area {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transition: all 0.3s ease;
+.click-area {
+    fill: transparent;
+    stroke: none;
+    pointer-events: auto;
     cursor: pointer;
 }
 
-/* Page Navigation (BLUE) */
-.nav-area.contact,
-.nav-area.gallery {
-    border: 2px dashed blue;
-    background: rgba(0, 0, 255, 0.1);
+/* Navigation styles */
+.click-area.contact,
+.click-area.gallery {
+    stroke: blue;
+    stroke-width: 2;
+    stroke-dasharray: 5,5;
 }
 
-/* Social Media Links (GREEN) */
-.nav-area.facebook,
-.nav-area.instagram,
-.nav-area.twitter,
-.nav-area.tumblr {
-    border: 2px dashed green;
-    background: rgba(0, 255, 0, 0.1);
+/* Social media styles */
+.click-area.facebook,
+.click-area.instagram,
+.click-area.twitter,
+.click-area.tumblr {
+    stroke: green;
+    stroke-width: 2;
+    stroke-dasharray: 5,5;
 }
 
-/* Hover effects for all nav areas */
-.nav-area:hover {
-    transform: scale(1.1);
-}
-
-.nav-area.contact:hover,
-.nav-area.gallery:hover {
-    background: rgba(0, 0, 255, 0.15);
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
-}
-
-.nav-area.facebook:hover,
-.nav-area.instagram:hover,
-.nav-area.twitter:hover,
-.nav-area.tumblr:hover {
-    background: rgba(0, 255, 0, 0.15);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
-}
-
-/* Link Positions */
-.nav-area.contact {    /* Clock area in window */
-    top: 45%;
-    left: 32%;
-    width: 60px;
-    height: 60px;
-}
-
-.nav-area.gallery {    /* Yellow magnet on fridge */
-    top: 30%;
-    right: 19%;
-    width: 50px;
-    height: 50px;
-}
-
-.nav-area.facebook {
-    top: 14%;
-    right: 14%;
-}
-
-.nav-area.instagram {
-    top: 21%;
-    right: 16%;
-}
-
-.nav-area.twitter {
-    top: 20%;
-    right: 23%;
-}
-
-.nav-area.tumblr {
-    top: 38%;
-    right: 15%;
+/* Hover effects - simplified */
+.click-area:hover {
+    fill: rgba(255, 255, 255, 0.2);
 }
 
 /* Footer */
 .copyright {
-    padding: 20px 0;
     text-align: center;
-    margin-top: auto;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.8);
 }
