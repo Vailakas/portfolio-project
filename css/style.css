@@ -30,44 +30,64 @@ html, body {
     object-fit: cover;
 }
 
-/* SVG Interactive Areas */
+/* Interactive Areas */
 .click-areas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
 }
 
 .click-area {
-    fill: transparent;
-    stroke: none;
-    pointer-events: auto;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px dashed transparent;
     cursor: pointer;
 }
 
-/* Navigation styles */
-.click-area.contact,
+/* Page Navigation */
+.click-area.contact {
+    border-color: blue;
+    left: 30%;
+    top: 47%;
+}
+
 .click-area.gallery {
-    stroke: blue;
-    stroke-width: 2;
-    stroke-dasharray: 5,5;
+    border-color: blue;
+    right: 11%;
+    top: 32%;
 }
 
-/* Social media styles */
-.click-area.facebook,
-.click-area.instagram,
-.click-area.twitter,
+/* Social Media Links */
+.click-area.facebook {
+    border-color: green;
+    right: 5%;
+    top: 17%;
+}
+
+.click-area.instagram {
+    border-color: green;
+    right: 8%;
+    top: 22%;
+}
+
+.click-area.twitter {
+    border-color: green;
+    right: 15%;
+    top: 21%;
+}
+
 .click-area.tumblr {
-    stroke: green;
-    stroke-width: 2;
-    stroke-dasharray: 5,5;
+    border-color: green;
+    right: 5%;
+    top: 41%;
 }
 
-/* Hover effects - simplified */
+/* Hover effect */
 .click-area:hover {
-    fill: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Footer */
