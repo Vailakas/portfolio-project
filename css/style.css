@@ -1,0 +1,131 @@
+/* Base styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.painting-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    max-height: calc(100vh - 100px);
+    aspect-ratio: 1/1;
+}
+
+.main-painting {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 100%;
+}
+
+/* Interactive Areas Base Styles */
+.nav-areas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(var(--scale-ratio, 1));
+    transform-origin: top left;
+}
+
+.nav-area {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Page Navigation (BLUE) */
+.nav-area.contact,
+.nav-area.gallery {
+    border: 2px dashed blue;
+    background: rgba(0, 0, 255, 0.1);
+}
+
+/* Social Media Links (GREEN) */
+.nav-area.facebook,
+.nav-area.instagram,
+.nav-area.twitter,
+.nav-area.tumblr {
+    border: 2px dashed green;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* Hover effects for all nav areas */
+.nav-area:hover {
+    transform: scale(1.1);
+}
+
+.nav-area.contact:hover,
+.nav-area.gallery:hover {
+    background: rgba(0, 0, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
+}
+
+.nav-area.facebook:hover,
+.nav-area.instagram:hover,
+.nav-area.twitter:hover,
+.nav-area.tumblr:hover {
+    background: rgba(0, 255, 0, 0.15);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+/* Link Positions */
+.nav-area.contact {    /* Clock area in window */
+    top: 45%;
+    left: 25%;
+    width: 60px;
+    height: 60px;
+}
+
+.nav-area.gallery {    /* Yellow magnet on fridge */
+    top: 30%;
+    right: 25%;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-area.facebook {
+    top: 14%;
+    right: 20%;
+}
+
+.nav-area.instagram {
+    top: 22%;
+    right: 21%;
+}
+
+.nav-area.twitter {
+    top: 20%;
+    right: 29%;
+}
+
+.nav-area.tumblr {
+    top: 38%;
+    right: 21%;
+}
+
+/* Footer */
+.copyright {
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
