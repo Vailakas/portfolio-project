@@ -8,58 +8,46 @@
 </head>
 <body>
     <div class="container">
+        <!-- Mobile Menu (hidden on desktop) -->
+        <div class="mobile-menu">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Navigation</button>
+                    <div class="accordion-content">
+                        <a href="contact.html">Contact</a>
+                        <a href="gallery.html">Gallery</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Social Media</button>
+                    <div class="accordion-content">
+                        <a href="https://www.facebook.com">Facebook</a>
+                        <a href="https://www.instagram.com">Instagram</a>
+                        <a href="https://www.twitter.com">Twitter</a>
+                        <a href="https://www.tumblr.com">Tumblr</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Version with clickable areas -->
         <div class="painting-container">
-            <img src="./images/front.jpg" alt="Interactive Home Painting" class="main-painting" usemap="#painting-map">
-            
-            <map name="painting-map">
+            <img src="./images/front.jpg" alt="Interactive Home Painting" class="main-painting">
+            <div class="nav-areas">
                 <!-- Page Navigation -->
-                <area 
-                    shape="circle" 
-                    coords="235,490,25" 
-                    href="contact.html" 
-                    alt="Contact Page"
-                    title="Contact">
-                    
-                <area 
-                    shape="circle" 
-                    coords="650,307,25" 
-                    href="gallery.html" 
-                    alt="Gallery Page"
-                    title="Gallery">
+                <a href="contact.html" class="nav-area contact" title="Contact"></a>
+                <a href="gallery.html" class="nav-area gallery" title="Gallery"></a>
                 
                 <!-- Social Media Links -->
-                <area 
-                    shape="circle" 
-                    coords="665,143,25" 
-                    href="https://www.facebook.com" 
-                    alt="Facebook"
-                    title="Facebook">
-                    
-                <area 
-                    shape="circle" 
-                    coords="685,225,25" 
-                    href="https://www.instagram.com" 
-                    alt="Instagram"
-                    title="Instagram">
-                    
-                <area 
-                    shape="circle" 
-                    coords="650,205,25" 
-                    href="https://www.twitter.com" 
-                    alt="Twitter"
-                    title="Twitter">
-                    
-                <area 
-                    shape="circle" 
-                    coords="665,389,25" 
-                    href="https://www.tumblr.com" 
-                    alt="Tumblr"
-                    title="Tumblr">
-            </map>
+                <a href="https://www.facebook.com" class="nav-area facebook" title="Facebook"></a>
+                <a href="https://www.instagram.com" class="nav-area instagram" title="Instagram"></a>
+                <a href="https://www.twitter.com" class="nav-area twitter" title="Twitter"></a>
+                <a href="https://www.tumblr.com" class="nav-area tumblr" title="Tumblr"></a>
+            </div>
         </div>
         
         <footer class="copyright">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
         </footer>
     </div>
     <script src="js/main.js"></script>
